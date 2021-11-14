@@ -12,15 +12,16 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ProdutosComponent implements OnInit {
   public produtos: Produto[];
-  constructor(private produtoService: ProdutoService) {
+  constructor(private produtoService: ProdutoService, private router: Router) {
     this.produtos = this.produtoService.listarProdutos();
   }
 
   produtoNome: string = '';
   produtoDescricao: string = '';
-  produtoPreco: Number = 0;
+  produtoPreco: Number = 0.0;
   produtoCategorias: string = '';
   produtoImagem: string = '';
+  produtoDataRemessa = Date();
 
   ngOnInit(): void {
     this.produtos = this.produtoService.listarProdutos();
@@ -30,14 +31,16 @@ export class ProdutosComponent implements OnInit {
   }
 
   cadastrar(): void {
+    const dataRemessa = new Date(this.produtoDataRemessa);
     let produto = new Produto(
       this.produtoNome,
       this.produtoDescricao,
       this.produtoPreco,
       this.produtoCategorias,
-      this.produtoImagem
+      this.produtoImagem,
+      dataRemessa
     );
     this.produtoService.cadastrar(produto);
-    console.log('it does nothing', this.produtoNome);
+    this.router.navigate(['/produtos']);
   }
 }

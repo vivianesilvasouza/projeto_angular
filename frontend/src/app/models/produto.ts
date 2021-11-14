@@ -5,6 +5,7 @@ export class Produto {
     public preco: Number,
     public categorias: string,
     public imagem: string,
+    public dataRemessa: Date,
     public id?: Number
   ) {}
 }

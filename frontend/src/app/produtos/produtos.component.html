@@ -32,9 +32,9 @@
                                         [(ngModel)]="produtoPreco" placeholder="Preço">
                                 </div>
                                 <div class="col-6">
-                                    <label for="inputDataRemessa" class="form-label">Data Remessa</label>
-                                    <input type="text" class="form-control" id="inputDataRemessa"
-                                        placeholder="Data Remessa">
+                                    <label for="produtoDataRemessa" class="form-label">Data Remessa</label>
+                                    <input type="date" class="form-control" [(ngModel)]="produtoDataRemessa"
+                                        id="produtoDataRemessa" placeholder="Data Remessa">
                                 </div>
                                 <div class="col-md-12">
                                     <label for="produtoCategorias" class="form-label">Categorias:</label>
@@ -68,6 +68,9 @@
             <div class="card-body">
                 <h5 class="card-title">{{produto.nome}}</h5>
                 <p class="card-text">{{produto.descricao}}</p>
+                <h4>{{produto.preco}}</h4>
+                <br />
+                <h4>{{produto.categorias}}</h4>
             </div>
         </div>
     </div>
