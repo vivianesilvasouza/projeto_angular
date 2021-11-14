@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Produto } from '../models';
 import { ProdutoService } from '../services';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-produtos',
@@ -11,10 +12,15 @@ import { ProdutoService } from '../services';
 })
 export class ProdutosComponent implements OnInit {
   public produtos: Produto[];
-
   constructor(private produtoService: ProdutoService) {
     this.produtos = this.produtoService.listarProdutos();
   }
+
+  produtoNome: string = '';
+  produtoDescricao: string = '';
+  produtoPreco: Number = 0;
+  produtoCategorias: string = '';
+  produtoImagem: string = '';
 
   ngOnInit(): void {
     this.produtos = this.produtoService.listarProdutos();
@@ -24,9 +30,14 @@ export class ProdutosComponent implements OnInit {
   }
 
   cadastrar(): void {
-    if (this.formProduto.form.valid) {
-      this.produtoService.cadastrar(this.Produto);
-      this.router.navigate(['/tarefas']);
-    }
+    let produto = new Produto(
+      this.produtoNome,
+      this.produtoDescricao,
+      this.produtoPreco,
+      this.produtoCategorias,
+      this.produtoImagem
+    );
+    this.produtoService.cadastrar(produto);
+    console.log('it does nothing', this.produtoNome);
   }
 }

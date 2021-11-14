@@ -17,17 +17,19 @@
                         <div class="modal-body">
                             <form class="row g-3">
                                 <div class="col-md-12">
-                                    <label for="inputNome" class="form-label">Nome:</label>
-                                    <input type="email" class="form-control" id="inputNome" placeholder="Nome">
+                                    <label for="produtoNome" class="form-label">Nome:</label>
+                                    <input type="text" class="form-control" name="produtoNome" id="produtoNome"
+                                        [(ngModel)]="produtoNome" placeholder="Nome">
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="textareaDescricao" class="form-label">Descrição:</label>
-                                    <textarea class="form-control" id="textareaDescricao" rows="3"
-                                        placeholder="Descrição"></textarea>
+                                    <label for="produtoDescricao" class="form-label">Descrição:</label>
+                                    <textarea class="form-control" name="produtoDescricao" id="produtoDescricao"
+                                        rows="3" [(ngModel)]="produtoDescricao" placeholder="Descrição"></textarea>
                                 </div>
                                 <div class="col-6">
-                                    <label for="inputPreco" class="form-label">Preço:</label>
-                                    <input type="text" class="form-control" id="inputPreco" placeholder="Preço">
+                                    <label for="produtoPreco" class="form-label">Preço:</label>
+                                    <input type="text" class="form-control" id="produtoPreco" name="produtoPreco"
+                                        [(ngModel)]="produtoPreco" placeholder="Preço">
                                 </div>
                                 <div class="col-6">
                                     <label for="inputDataRemessa" class="form-label">Data Remessa</label>
@@ -35,21 +37,21 @@
                                         placeholder="Data Remessa">
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="inputCategorias" class="form-label">Categorias:</label>
-                                    <input type="text" class="form-control" id="inputCategorias"
-                                        placeholder="categorias">
+                                    <label for="produtoCategorias" class="form-label">Categorias:</label>
+                                    <input type="text" class="form-control" id="produtoCategorias"
+                                        name="produtoCategorias" [(ngModel)]="produtoCategorias"
+                                        placeholder="Categorias (separe-as por vírgular)">
                                 </div>
                                 <div class="col-md-12">
                                     <label for="inputImagem" class="form-label">Imagem:</label>
-                                    <input id="inputImagem" type="file" name="file" id="file"
-                                        placeholder="Arraste uma imagem " />
+                                    <input id="produtoImagem" type="file" name="produtoImagem"
+                                        [(ngModel)]="produtoImagem" placeholder="Arraste uma imagem " />
                                 </div>
-
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" (click)="cadastrar()" class="btn btn-primary">Salvar </button>
+                            <button type="button" (click)="cadastrar()" class="btn btn-primary">Salvar</button>
                         </div>
                     </div>
                 </div>

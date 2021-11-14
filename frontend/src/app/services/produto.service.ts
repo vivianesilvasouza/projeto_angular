@@ -19,6 +19,8 @@ export class ProdutoService {
       descricao:
         'MacBook Pro com a melhor tecnologia do mercado, trazendo muita inovação e velocidade',
       preco: 17499.0,
+      categorias: '',
+      imagem: '',
     },
     {
       id: 2,
@@ -26,6 +28,8 @@ export class ProdutoService {
       descricao:
         'MacBook Air com a melhor tecnologia do mercado, trazendo muita inovação e velocidade',
       preco: 10499.0,
+      categorias: '',
+      imagem: '',
     },
     {
       id: 3,
@@ -33,6 +37,8 @@ export class ProdutoService {
       descricao:
         'MacBook Air com a melhor tecnologia do mercado, trazendo muita inovação e velocidade',
       preco: 13499.0,
+      categorias: '',
+      imagem: '',
     },
     {
       id: 4,
@@ -40,6 +46,8 @@ export class ProdutoService {
       descricao:
         'MacBook Pro com a melhor tecnologia do mercado, trazendo muita inovação e velocidade',
       preco: 12499.0,
+      categorias: '',
+      imagem: '',
     },
   ];
 
@@ -54,7 +62,7 @@ export class ProdutoService {
 
   cadastrar(produto: Produto): void {
     const produtos = this.listarProdutos();
-    produto.id = new Date().getTime();
+    produto.id = produtos.length + 1;
     produtos.push(produto);
   }
 
