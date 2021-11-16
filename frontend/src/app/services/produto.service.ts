@@ -54,13 +54,6 @@ export class ProdutoService {
   listarProdutos(): Produto[] {
     const produtos = localStorage['produtos'];
     return produtos ? JSON.parse(produtos) : [];
-
-    // if (this.produtos.length > 0) {
-    //   return this.produtos;
-    // }
-
-    // this.produtos = this.produtosObj;
-    // return this.produtos;
   }
 
   cadastrar(produto: Produto): void {
@@ -68,32 +61,7 @@ export class ProdutoService {
     produto.id = new Date().getTime();
     produtos.push(produto);
     localStorage['produtos'] = JSON.stringify(produtos);
-
-    // const produtos = this.listarProdutos();
-    // produto.id = produtos.length + 1;
-    // produtos.push(produto);
   }
-
-  // buscarPorId(id: number): Produto | undefined {
-  //   const produtos: Produto[] = this.listarProdutos();
-  //   const produto = produtos.find((pro) => pro.id === id);
-  //   return produto;
-  // }
-
-  // atualizar(produto: Produto): void {
-  //   const produtos: Produto[] = this.listarProdutos();
-  //   produtos.forEach((obj, index, objs) => {
-  //     if (produto.id === obj.id) {
-  //       objs[index] = produto;
-  //     }
-  //   });
-  //   this.produtos = produtos;
-  // }
-
-  // remover(id: number): void {
-  //   let produtos: Produto[] = this.listarProdutos();
-  //   this.produtos = produtos.filter((produto) => produto.id !== id);
-  // }
 
   buscarPorId(id: number): Produto | undefined {
     const produtos: Produto[] = this.listarProdutos();

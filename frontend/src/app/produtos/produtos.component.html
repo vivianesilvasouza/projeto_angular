@@ -62,8 +62,13 @@
 </div>
 
 <div class="row row-cols-1 row-cols-md-4 g-4">
+
+
     <div *ngFor="let produto of produtos" class="col">
+
         <div class="card h-100">
+            <button type="button" class="btn btn-primary">Editar</button>
+            <button type="button" class="btn btn-danger">Deletar</button>
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{produto.nome}}</h5>

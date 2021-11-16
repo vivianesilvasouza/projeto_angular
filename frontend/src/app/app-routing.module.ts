@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProdutosComponent } from './produtos/produtos.component';
+import { GuardaRotaService } from './services/guarda-rota.service';
 
 const routes: Routes = [
-  { path: 'produtos', component: ProdutosComponent },
+  { path: '', component: HomeComponent, canActivate: [GuardaRotaService] },
+  {
+    path: 'produtos',
+    component: ProdutosComponent,
+    canActivate: [GuardaRotaService],
+  },
   { path: 'login', component: LoginComponent },
-  { path: '', component: HomeComponent },
 ];
 
 @NgModule({

@@ -43,4 +43,8 @@ export class ProdutosComponent implements OnInit {
     this.produtoService.cadastrar(produto);
     this.router.navigate(['/produtos']);
   }
+
+  atualizar(): void {}
+
+  remover(): void {}
 }
