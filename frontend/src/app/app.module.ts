@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { GuardaRotaService } from './services/guarda-rota.service';
+
 import { UsuarioService } from './services';
 
 @NgModule({

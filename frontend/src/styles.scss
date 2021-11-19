@@ -1,1 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background: #f4f4f4 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("https://use.typekit.net/hzy7zyt.css");
+}

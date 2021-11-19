@@ -1,3 +1,5 @@
+<link href="https://unpkg.com/@popperjs/core@2https://unpkg.com/@popperjs/core@2">
+
 <div class="container">
     <div class="row">
         <div class="col-md-4">Meus Produtos</div>
@@ -67,8 +69,127 @@
     <div *ngFor="let produto of produtos" class="col">
 
         <div class="card h-100">
-            <button type="button" class="btn btn-primary">Editar</button>
-            <button type="button" class="btn btn-danger">Deletar</button>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary me-md-2" type="button" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Editar</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Novo Produto</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="produtoNome" class="form-label">Nome:</label>
+                                        <input type="text" class="form-control" name="produtoNome" id="produtoNome"
+                                            [(ngModel)]="produtoNome" placeholder="Nome">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="produtoDescricao" class="form-label">Descrição:</label>
+                                        <textarea class="form-control" name="produtoDescricao" id="produtoDescricao"
+                                            rows="3" [(ngModel)]="produtoDescricao" placeholder="Descrição"></textarea>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="produtoPreco" class="form-label">Preço:</label>
+                                        <input type="text" class="form-control" id="produtoPreco" name="produtoPreco"
+                                            [(ngModel)]="produtoPreco" placeholder="Preço">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="produtoDataRemessa" class="form-label">Data Remessa</label>
+                                        <input type="date" class="form-control" [(ngModel)]="produtoDataRemessa"
+                                            id="produtoDataRemessa" placeholder="Data Remessa">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="produtoCategorias" class="form-label">Categorias:</label>
+                                        <input type="text" class="form-control" id="produtoCategorias"
+                                            name="produtoCategorias" [(ngModel)]="produtoCategorias"
+                                            placeholder="Categorias (separe-as por vírgular)">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="inputImagem" class="form-label">Imagem:</label>
+                                        <input id="produtoImagem" type="file" name="produtoImagem"
+                                            [(ngModel)]="produtoImagem" placeholder="Arraste uma imagem " />
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" (click)="cadastrar()" class="btn btn-primary">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary me-md-2" type="button" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Excluir</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Novo Produto</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="produtoNome" class="form-label">Nome:</label>
+                                        <input type="text" class="form-control" name="produtoNome" id="produtoNome"
+                                            [(ngModel)]="produtoNome" placeholder="Nome">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="produtoDescricao" class="form-label">Descrição:</label>
+                                        <textarea class="form-control" name="produtoDescricao" id="produtoDescricao"
+                                            rows="3" [(ngModel)]="produtoDescricao" placeholder="Descrição"></textarea>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="produtoPreco" class="form-label">Preço:</label>
+                                        <input type="text" class="form-control" id="produtoPreco" name="produtoPreco"
+                                            [(ngModel)]="produtoPreco" placeholder="Preço">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="produtoDataRemessa" class="form-label">Data Remessa</label>
+                                        <input type="date" class="form-control" [(ngModel)]="produtoDataRemessa"
+                                            id="produtoDataRemessa" placeholder="Data Remessa">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="produtoCategorias" class="form-label">Categorias:</label>
+                                        <input type="text" class="form-control" id="produtoCategorias"
+                                            name="produtoCategorias" [(ngModel)]="produtoCategorias"
+                                            placeholder="Categorias (separe-as por vírgular)">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="inputImagem" class="form-label">Imagem:</label>
+                                        <input id="produtoImagem" type="file" name="produtoImagem"
+                                            [(ngModel)]="produtoImagem" placeholder="Arraste uma imagem " />
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" (click)="cadastrar()" class="btn btn-primary">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{produto.nome}}</h5>
